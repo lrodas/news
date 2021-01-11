@@ -1,0 +1,21 @@
+<ion-card color="dark" class="animated fadeIn fast">
+  <ion-card-header>
+    <ion-card-subtitle> 
+      <span class="text-primary"> {{ index + 1}}.  </span>
+      <span class="news-source-name">{{ newsItem.source.name }}</span>
+
+      <div class="newsItem-more">
+        <ion-button (click)="openMenu()" expand="block" fill="clear">
+          <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card-subtitle>
+    <ion-card-title (click)="openNewsItem()"> {{ newsItem.title }}:TEST </ion-card-title>
+  </ion-card-header>
+  
+  <ion-img (click)="openNewsItem()" *ngIf="newsItem.urlToImage" [src]="newsItem.urlToImage"></ion-img>
+
+  <ion-card-content>
+    <p> {{ newsItem.description }} </p>
+  </ion-card-content>
+</ion-card>
