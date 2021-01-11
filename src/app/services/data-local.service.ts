@@ -47,7 +47,8 @@ export class DataLocalService {
   private async showSimpleToast(message: string): Promise<void> {
     const toast = await this.toastController.create({
       message,
-      duration: 2000
+      duration: 2000,
+      animated: true
     });
     toast.present();
   }
